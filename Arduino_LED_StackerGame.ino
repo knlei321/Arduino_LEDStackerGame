@@ -1,6 +1,8 @@
 #include <MD_MAX72xx.h>
 #include <SPI.h>
 
+//miss後方塊會掉落
+
 // --- 硬體與腳位定義 ---
 #define MAX_DEVICES 4   // 使用 4 合 1 顯示器 (4 個 8x8 模組串聯)
 #define CLK_PIN     11  // 時脈腳位
@@ -27,7 +29,7 @@ unsigned long lastMove = 0; // 紀錄上次方塊移動的時間
 int moveDelay = 200;        // 方塊移動的速度 (毫秒)，越小越快
 bool moveRight = true;      // 目前移動的方向 (向右或向左)
 
-// --- 偵錯與測試模式 ---
+// --- 偵錯與測試模式 --- 
 bool testMode = false;      // 測試模式開關
 int testRow = 0;            // 測試模式中顯示的行號
 const bool ROTATE_DISPLAY = true; // 旋轉校正 (針對 FC-16 模組縱向擺放調整)
